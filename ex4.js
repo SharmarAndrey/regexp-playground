@@ -7,11 +7,11 @@
  */
 
 function stringClean(s) {
-    // Cambia únicamente la siguiente línea
-    const regex = /changeme/g;
+	// Cambia únicamente la siguiente línea
+	const regex = /[0-9]/g;
 
-    //https://javascript.info/regexp-methods#str-replace-str-regexp-str-func
-    return s.replace(regex, '');
+	//https://javascript.info/regexp-methods#str-replace-str-regexp-str-func
+	return s.replace(regex, '');
 }
 
 // Juegos de pruebas

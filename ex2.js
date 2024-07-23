@@ -1,8 +1,8 @@
 /** Validar correos electrónicos */
 
 function isValidEmail(email) {
-    const emailPattern = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,3}$/;
-    return emailPattern.test(email);
+	const emailPattern = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,4}$/;
+	return emailPattern.test(email);
 }
 
 // Ejemplos de uso:

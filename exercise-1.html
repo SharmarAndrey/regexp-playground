@@ -2,41 +2,41 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css">
 
-    <title>Formulario de Validación con Expresiones Regulares</title>
+	<title>Formulario de Validación con Expresiones Regulares</title>
 </head>
 
 <body class="container">
-    <h2>¡Ábrme con Live Server! Formulario de Validación de un producto</h2>
-    <form>
+	<h2>¡Ábrme con Live Server! Formulario de Validación de un producto</h2>
+	<form>
 
-        <!-- Nombre del producto -->
-        <label for="title">Nombre del producto:</label>
-        <input type="text" id="title" name="title" pattern="cambiar" required>
-        <small>Solamente puede contener carácteres, números, guión normal y espacios en blanco</small>
+		<!-- Nombre del producto -->
+		<label for="title">Nombre del producto:</label>
+		<input type="text" id="title" name="title" pattern="^[a-zA-Z0-9 \-]+$" required>
+		<small>Solamente puede contener carácteres, números, guión normal y espacios en blanco</small>
 
 
-        <!-- Precio del producto -->
-        <label for="input">Precio:</label>
-        <input type="text" id="date" name="date" pattern="cambiar" required>
-        <small>Formatos aceptados: 12.49 | 15.3 | 20</small>
+		<!-- Precio del producto -->
+		<label for="input">Precio:</label>
+		<input type="text" id="date" name="date" pattern="^\d+(\.\d{1,2})?$" required>
+		<small>Formatos aceptados: 12.49 | 15.3 | 20</small>
 
-        <!-- FEcha de alta -->
-        <label for="date">Fecha (DD/MM/YYYY):</label>
-        <input type="text" id="date" name="date" pattern="cambiar" required>
-        <small>Formato: 31/12/2024 . Nota: Solamente puedes comprobar el formato en el atributo pattern, no puedes
-            comprobar si un día es correcto para un mes en concreto. </small>
+		<!-- FEcha de alta -->
+		<label for="date">Fecha (DD/MM/YYYY):</label>
+		<input type="text" id="date" name="date" pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}$" required>
+		<small>Formato: 31/12/2024 . Nota: Solamente puedes comprobar el formato en el atributo pattern, no puedes
+			comprobar si un día es correcto para un mes en concreto. </small>
 
-        <button type="submit">Enviar</button>
-    </form>
-    <script>
-        /** No tocar */
-        document.querySelector('form').addEventListener('form', (e) => {
-            e.preventDefault();
-            alert('¡Todos los campos han validado!');
-        });
-    </script>
+		<button type="submit">Enviar</button>
+	</form>
+	<script>
+		/** No tocar */
+		document.querySelector('form').addEventListener('form', (e) => {
+			e.preventDefault();
+			alert('¡Todos los campos han validado!');
+		});
+	</script>
 </body>
