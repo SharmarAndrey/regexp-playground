@@ -5,9 +5,12 @@
  */
 
 function isSubstring(s1, s2) {
-
+	const regex = new RegExp(escapeRegExp(s2), 'i');
+	return regex.test(s1);
 }
-
+function escapeRegExp(string) {
+	return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& significa toda la cadena coincidente
+}
 // Prueba 1: Substring presente en la cadena principal
 // Explicación: "world" es un substring de "Hello, world!"
 // Resultado esperado: true
